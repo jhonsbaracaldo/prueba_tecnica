@@ -1,0 +1,28 @@
+<div class="form-container">
+    <h2>Registrar Vendedor</h2>
+  
+    <div class="form-group">
+      <label for="nit_seller">DNI del Vendedor</label>
+      <input id="nit_seller" type="number" [(ngModel)]="nuevoVendedor.nit" name="nit_seller" required />
+    </div>
+  
+    <div class="form-group">
+      <label for="name_seller">Nombre del Vendedor</label>
+      <input id="name_seller" type="text" [(ngModel)]="nuevoVendedor.nombre" name="name_seller" required />
+    </div>
+  
+    <div class="form-group">
+      <label for="lastname">Apellido</label>
+      <input id="lastname" type="text" [(ngModel)]="nuevoVendedor.apellido" name="lastname" required />
+    </div>
+  
+    <div class="button-group">
+      <button type="button" id="guardar" (click)="guardarVendedor()">Guardar</button>
+      <button type="button" id="consultar" routerLink="/modificar-vendedor">Consultar</button>
+    </div>
+  
+    <div class="status-message" id="statusMessage">
+ 
+    </div>
+  </div>
+  

@@ -1,0 +1,53 @@
+<div class="form-container">
+    <h2>Gestión de Vendedores</h2>
+  
+    <!-- Tabla para mostrar vendedores -->
+    <table class="vendor-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>NIT</th>
+      
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vendedor of vendedores">
+          <td>{{ vendedor.id_Seller }}</td>
+          <td>{{ vendedor.name_seller }}</td>
+          <td>{{ vendedor.lastname }}</td>
+          <td>{{ vendedor.nit_seller }}</td>
+        
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Formulario para actualizar vendedor -->
+    <div class="form-group">
+      <h3>Actualizar Vendedor</h3>
+      <label for="update-vendor-id">ID del Vendedor</label>
+      <input id="update-vendor-id" type="number" [(ngModel)]="idVendedorActualizar" />
+  
+      <label for="update-vendor-name">Nombre</label>
+      <input id="update-vendor-name" type="text" [(ngModel)]="nuevoVendedor.nombre" />
+  
+      <label for="update-vendor-lastname">Apellido</label>
+      <input id="update-vendor-lastname" type="text" [(ngModel)]="nuevoVendedor.apellido"  />
+  
+      <label for="update-vendor-nit">NIT</label>
+      <input id="update-vendor-nit" type="text" [(ngModel)]="nuevoVendedor.nit"  />
+      <br>
+      <button type="button" [disabled]="!idVendedorActualizar" (click)="actualizarVendedor(idVendedorActualizar!)">Actualizar Vendedor</button>
+    </div>
+  
+    <!-- Formulario para eliminar vendedor por ID -->
+    <div class="form-group">
+      <h3>Eliminar Vendedor</h3>
+      <label for="delete-vendedor-id">ID del Vendedor a Eliminar</label>
+      <input id="delete-vendedor-id" type="number" min="1" [(ngModel)]="idVendedorEliminar"  />
+      <br>
+      <button type="button" [disabled]="!idVendedorEliminar" (click)="eliminarVendedorPorId()">Eliminar Vendedor</button>
+    </div>
+  </div>
+  

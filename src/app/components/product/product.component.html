@@ -1,0 +1,61 @@
+<div class="form-container">
+    <h2>Formulario de Producto</h2>
+  
+    <div class="form-group">
+      <label for="nameproduct">Nombre del Producto</label>
+      <input
+        id="nameproduct"
+        type="text"
+        [(ngModel)]="nuevoProducto.nameproduct"
+
+        required
+      />
+    </div>
+  
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea
+        id="description"
+        [(ngModel)]="nuevoProducto.description"
+        required
+      ></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="amount">Cantidad</label>
+      <input
+        id="amount"
+        type="number"
+        [(ngModel)]="nuevoProducto.amount"
+        min="0"
+        required
+      />
+    </div>
+  
+    <div class="form-group">
+      <label for="weigth">Peso (kg)</label>
+      <input
+        id="weigth"
+        type="number"
+        [(ngModel)]="nuevoProducto.weigth"
+        min="0"
+        required
+      />
+    </div>
+    <div class="form-group">
+        <label for="weigth">Precio Unitario</label>
+        <input
+          id="weigth"
+          type="number"
+          [(ngModel)]="nuevoProducto.price"
+          min="0"
+          required
+        />
+      </div>
+  
+    <div class="button-group">
+      <button type="button" (click)="guardarProducto()">Guardar</button>
+      <button type="button" routerLink="/modificar-productos">Consultar</button>
+    </div>
+  </div>
+  

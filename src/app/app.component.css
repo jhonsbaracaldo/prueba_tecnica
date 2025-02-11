@@ -1,0 +1,52 @@
+h1 {
+    color: #8ea045;
+    text-align: center;
+  }
+  
+  .conten_primario {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .main {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+  }
+  
+  #buttons {
+    display: flex;
+    flex-direction: column;  
+    justify-content: flex-start;
+    width: 20%;              
+    gap: 10px;
+  }
+  
+  .content {
+                 
+    background-color: #2bd01c;
+    border-radius: 10px;
+    padding: 10px;
+    width: 58%;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, );
+  }
+  
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  

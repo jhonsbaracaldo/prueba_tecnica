@@ -1,0 +1,61 @@
+<div class="form-container">
+    <h2>Gestión de Productos</h2>
+  
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Cantidad</th>
+          <th>Peso (kg)</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of productos">
+          <td>{{ producto.id_product }}</td>
+          <td>{{ producto.nameproduct }}</td>
+          <td>{{ producto.description }}</td>
+          <td>{{ producto.amount }}</td>
+          <td>{{ producto.weigth }}</td>
+          <td>{{ producto.prices | currency: 'USD' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <hr />
+  
+    <div class="form-group">
+      <h3>Eliminar Producto</h3>
+      <label for="delete-product-id">ID del Producto a Eliminar</label>
+      <input id="delete-product-id" type="number" min="1" [(ngModel)]="idProductoEliminar" />
+      <button type="button" [disabled]="idProductoEliminar === null" (click)="eliminarProductoPorId()">Eliminar Producto</button>
+    </div>
+  
+    <hr />
+  
+    <div class="form-group">
+      <h3>Actualizar Producto</h3>
+      <label for="update-id">ID del Producto</label>
+      <input id="update-id" type="number" min="1" [(ngModel)]="idProductoActualizar" />
+  
+      <label for="update-nameproduct">Nombre del Producto</label>
+      <input id="update-nameproduct" type="text" [(ngModel)]="nuevoProducto.nameproduct" />
+  
+      <label for="update-description">Descripción</label>
+      <textarea id="update-description" [(ngModel)]="nuevoProducto.description"></textarea>
+  
+      <label for="update-amount">Cantidad</label>
+      <input id="update-amount" type="number" min="0" [(ngModel)]="nuevoProducto.amount" />
+  
+      <label for="update-weigth">Peso (kg)</label>
+      <input id="update-weigth" type="number" min="0" [(ngModel)]="nuevoProducto.weigth" />
+  
+      <label for="update-prices">Precio</label>
+      <input id="update-prices" type="number" min="0" [(ngModel)]="nuevoProducto.prices" />
+  
+      <button type="button" [disabled]="idProductoActualizar === null" (click)="actualizarProducto(idProductoActualizar)">Actualizar Producto</button>
+    </div>
+  </div>
+  

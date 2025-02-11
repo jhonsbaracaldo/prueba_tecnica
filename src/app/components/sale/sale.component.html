@@ -1,0 +1,74 @@
+<div class="form-container">
+  <h2>Venta de productos</h2>
+
+  <h2>Inventario</h2>
+
+  <table class="product-table">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+              <th>Peso (kg)</th>
+              <th>Precio</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let producto of productos">
+              <td>{{ producto.id_product }}</td>
+              <td>{{ producto.nameproduct }}</td>
+              <td>{{ producto.description }}</td>
+              <td>{{ producto.amount }}</td>
+              <td>{{ producto.weigth }}</td>
+              <td>{{ producto.prices | currency: 'USD' }}</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <form (ngSubmit)="guardarVenta()">
+      <div class="form-group">
+          <label for="seller_id">ID del Vendedor</label>
+          <input type="number" id="seller_id" name="seller_id" [(ngModel)]="venta.id_seller" required>
+      </div>
+
+      <div class="form-group">
+          <label for="id_product">ID del Producto</label>
+          <input type="number" id="id_product" name="id_product" [(ngModel)]="venta.id_product" required>
+      </div>
+
+      <div class="form-group">
+          <label for="amount">Cantidad</label>
+          <input type="number" id="amount" name="amount" [(ngModel)]="venta.amount" min="1" required>
+      </div>
+
+      <div class="form-group">
+          <label for="price">Precio</label>
+          <input type="number" id="price" name="price" [(ngModel)]="venta.price" min="1" required>
+      </div>
+
+      <div class="form-group">
+          <label for="date">Fecha</label>
+          <input type="date" id="date" name="date" [(ngModel)]="venta.date" required>
+      </div>
+      <div class="button-group"> 
+      <button type="submit">Generar Venta</button>
+      <button type="submit">Actualizar Inventario</button>
+      <button type="button" routerLink="/modificar-venta" >Consultar</button>
+    </div>
+     
+
+  </form>
+
+  <div *ngIf="mostrarPopup" class="modal">
+      <div class="modal-content">
+          <h2>Venta Realizada</h2>
+          <p>Producto: {{ ventaRealizada?.producto }}</p>
+          <p>Cantidad: {{ ventaRealizada?.cantidad }}</p>
+          <p>Precio: {{ ventaRealizada?.precio | currency }}</p>
+          <p>Fecha: {{ ventaRealizada?.fecha | date }}</p>
+          <p>Total: {{ ventaRealizada?.total | currency }}</p>
+          <button (click)="cerrarPopup()">Cerrar</button>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="form-container">
+  <h2>Gestión de Ventas</h2>
+
+  <table class="sale-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ID Vendedor</th>
+        <th>ID Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Total</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venta of ventas">
+        <td>{{ venta.id }}</td>
+        <td>{{ venta.id_seller }}</td>
+        <td>{{ venta.id_product }}</td>
+        <td>{{ venta.amount }}</td>
+        <td>{{ venta.total | currency }}</td>
+        <td>{{ venta.date | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

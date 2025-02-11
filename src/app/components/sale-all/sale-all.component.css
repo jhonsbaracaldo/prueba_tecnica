@@ -1,0 +1,23 @@
+h2{
+  text-align: center;
+}
+.sale-table {
+  width: 100%;
+  border-collapse: collapse; 
+  margin-top: 20px;
+}
+
+.sale-table th, .sale-table td {
+  border: 1px solid #151313;
+  padding: 8px; 
+  text-align: left; 
+}
+
+.sale-table th {
+  background-color: #f2f2f2; 
+  font-weight: bold;
+}
+
+.sale-table tr {
+  background-color: #f9f9f9; 
+}
